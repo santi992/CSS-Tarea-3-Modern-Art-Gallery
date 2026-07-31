@@ -1,0 +1,66 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+//Botones
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-family: t.$font-familiy-heading;
+  font-size: t.$font-size-heading-s;
+  font-weight: t.$font-weight-heading;
+  letter-spacing: 4px;
+
+  &:hover {
+    @include m.transition($time: 300ms);
+  }
+
+  &-left {
+    padding-right: 1.5rem;
+    &-end {
+      margin-right: 1.5rem;
+    }
+  }
+  &-right {
+    padding-left: 1.5rem;
+    &-end {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &-end {
+    font-family: t.$font-familiy-text;
+    font-weight: t.$font-weight-text;
+    padding: 1rem 1.5rem;
+  }
+
+  &-primary {
+    background-color: c.$color-bg-primary;
+    color: c.$color-text-secondary;
+
+    &:hover {
+      background-color: c.$color-bg-secondary;
+      //color: c.$color-text-primary;
+    }
+
+    &-end {
+      background-color: c.$color-bg-secondary;
+      color: c.$color-text-secondary;
+    }
+  }
+
+  &-secondary {
+    background-color: c.$color-bg-secondary;
+    color: c.$color-text-primary;
+
+    &:hover {
+      background-color: c.$color-bg-primary;
+      color: c.$color-text-secondary;
+    }
+
+    &-end {
+      background-color: c.$color-bg-primary;
+      color: c.$color-text-primary;
+    }
+  }
+}

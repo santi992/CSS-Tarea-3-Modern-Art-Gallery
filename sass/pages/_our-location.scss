@@ -1,0 +1,79 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+main.our-location {
+  & .map-container {
+    height: max-content;
+    width: 100%;
+    overflow: hidden;
+    @include m.flex($justify: center);
+    & img {
+      display: block;
+    }
+
+    & .back-home-button {
+      position: absolute;
+      inset: 0;
+      padding: 0;
+
+      @include b.respond(b.$tablet) {
+        margin-left: 2rem;
+      }
+
+      @include b.respond(b.$desktop) {
+        margin-left: 7rem;
+      }
+    }
+  }
+
+  & .info {
+    background-color: c.$color-bg-primary;
+    color: c.$color-text-secondary;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    font-size: t.$font-size-body-l;
+    line-height: t.$line-spacing-body-l;
+    & .title {
+      font-size: t.$font-size-heading-l;
+      line-height: t.$font-size-heading-l;
+    }
+    & .subtitle {
+      margin-top: 2rem;
+      font-size: t.$font-size-heading-m;
+      line-height: t.$line-spacing-heading-m;
+      color: c.$color-heading-secondary;
+    }
+    & address {
+      margin-top: 1.5rem;
+      font-style: normal;
+    }
+    & .description {
+      margin-top: 1.5rem;
+    }
+
+    &-container {
+      @include b.respond(b.$tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1.75fr;
+        grid-template-rows: 1fr;
+        gap: 5rem;
+        //padding-top: 5rem;
+
+        & .grid-item-1 {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        & .grid-item-2 {
+          grid-column: 2;
+          grid-row: 1;
+
+          & .subtitle {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

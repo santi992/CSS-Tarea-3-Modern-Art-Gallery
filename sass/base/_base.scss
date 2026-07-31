@@ -1,0 +1,41 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+html {
+  font-size: t.$font-size-base;
+}
+
+body {
+  //Elementos centrados
+  @include m.flex($direction: column, $align: center);
+
+  //Fondo
+  background-color: c.$color-bg-main;
+
+  //Texto base
+  font-family: t.$font-familiy-text;
+  font-weight: t.$font-weight-text;
+  font-size: t.$font-size-body-m;
+
+  //Normalizando ancho y márgenes de elementos
+  & > * {
+    width: 100%;
+  }
+
+  & * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: t.$font-weight-heading;
+  font-family: t.$font-familiy-heading;
+}

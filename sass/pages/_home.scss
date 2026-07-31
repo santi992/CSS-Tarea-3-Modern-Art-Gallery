@@ -1,0 +1,181 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+main.home {
+  margin-bottom: 8rem;
+
+  & .hero {
+    &-container {
+      width: 100%;
+
+      & .image-container {
+        width: 100%;
+        height: 100%;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        @include b.respond(b.$tablet) {
+          background: linear-gradient(to right, #151515 50%, #ffffff 50%);
+          @include m.flex();
+        }
+        @include b.respond(b.$desktop) {
+          @include m.flex($justify: center, $align: center);
+        }
+      }
+    }
+
+    &-title-container {
+      & h1 {
+        margin-top: 2rem;
+        margin-right: 4rem;
+        font-size: t.$font-size-heading-l;
+        line-height: t.$line-spacing-heading-l;
+      }
+      & p {
+        margin-top: 2rem;
+        font-size: t.$font-size-body-m;
+        line-height: t.$line-spacing-body-m;
+      }
+
+      & a {
+        margin-top: 40px;
+      }
+      @include b.respond(b.$tablet) {
+        margin-left: 50%;
+        width: 50%;
+
+        position: absolute;
+        inset: 0;
+
+        & > h1 {
+          margin-right: 4.5rem;
+          font-size: t.$font-size-heading-xxl;
+          line-height: t.$line-spacing-heading-xxl;
+        }
+
+        & p {
+          font-size: t.$font-size-body-xl;
+        }
+
+        & a {
+          margin-top: 40px;
+        }
+      }
+
+      @include b.respond(b.$desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        width: 100%;
+        margin: 11rem auto;
+
+        & > .grid-item-1 {
+          grid-template-columns: 1;
+          grid-template-rows: 1;
+          margin-right: 3rem;
+          color: c.$color-heading-tertiary;
+          font-size: t.$font-size-heading-xxl;
+          line-height: t.$line-spacing-heading-xxl;
+        }
+        & > .grid-item-2 {
+          grid-template-columns: 2;
+          grid-template-rows: 1;
+          margin-left: 32%;
+
+          & p {
+            font-size: t.$font-size-body-xl;
+          }
+
+          & a {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  & .gallery-grid {
+    margin-top: 8rem;
+
+    & h2 {
+      font-size: t.$font-size-heading-l;
+      line-height: t.$line-spacing-heading-l;
+    }
+
+    & p {
+      font-size: t.$font-size-body-l;
+      line-height: t.$line-spacing-body-l;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    & .grid-item-2 {
+      margin-top: 2rem;
+      margin-right: 2rem;
+      & p {
+        margin-top: 2rem;
+      }
+    }
+    & .grid-item-5 {
+      background-color: c.$color-bg-primary;
+      color: c.$color-text-secondary;
+      padding: 2rem;
+      & p {
+        margin-top: 2rem;
+      }
+    }
+
+    @include b.respond(b.$tablet) {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, 30rem);
+
+      & .grid-item-1 {
+        grid-column: 3/6;
+        grid-row: 1;
+      }
+      & .grid-item-2 {
+        grid-column: 1/3;
+        grid-row: 1;
+      }
+      & .grid-item-3 {
+        grid-column: 1/4;
+        grid-row: 2/4;
+      }
+      & .grid-item-4 {
+        grid-column: 4/6;
+        grid-row: 2;
+      }
+      & .grid-item-5 {
+        grid-column: 4/6;
+        grid-row: 3;
+      }
+    }
+
+    @include b.respond(b.$desktop) {
+      grid-template-rows: repeat(3, 25rem);
+
+      & .grid-item-2 {
+        margin-top: 4rem;
+        margin-right: 10rem;
+      }
+      & .grid-item-5 {
+        padding: 4rem;
+      }
+    }
+  }
+}

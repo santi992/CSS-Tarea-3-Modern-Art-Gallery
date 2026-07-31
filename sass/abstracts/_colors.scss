@@ -1,0 +1,24 @@
+//============================================//
+// Colores
+//============================================//
+
+//Colores base
+$color-brand-primary: #d5966c;
+$color-brand-secondary: #151515;
+$color-white: #ffffff;
+$color-gray: #444444;
+
+//Colores de fondo
+$color-bg-main: $color-white;
+$color-bg-primary: $color-brand-secondary;
+$color-bg-secondary: $color-brand-primary;
+
+//Colores de texto
+$color-text-primary: $color-brand-secondary;
+$color-text-secondary: $color-white;
+$color-text-muted: $color-gray;
+
+//Colores de títulos
+$color-heading-primary: $color-brand-secondary;
+$color-heading-secondary: $color-brand-primary;
+$color-heading-tertiary: $color-white;

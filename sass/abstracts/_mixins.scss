@@ -1,0 +1,24 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin glass {
+  background-color: rgba($color: white, $alpha: 0.5);
+  backdrop-filter: blur(10px);
+}
+
+@mixin shadow($opacity: 0.25) {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, $opacity);
+}
+
+@mixin transition($time: 200ms, $mode: ease, $items: all) {
+  transition: $time $mode $items;
+}
+
+@mixin padding-margin($padding: 0, $margin: 0) {
+  padding: $padding;
+  margin: $margin;
+}

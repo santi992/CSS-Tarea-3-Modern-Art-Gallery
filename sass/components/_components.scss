@@ -1,0 +1,98 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+//Links
+.link {
+  text-decoration: none;
+  color: c.$color-text-primary;
+
+  &:hover {
+    color: c.$color-text-secondary;
+    @include m.transition;
+    font-weight: 700;
+    transform: translateY(1px);
+  }
+
+  &-active {
+    color: c.$color-text-secondary;
+    font-weight: 700;
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      width: 2rem;
+      border-bottom: 0.25rem solid c.$color-brand-primary;
+      border-radius: 0.25rem;
+
+      transform: translateY(1.75rem);
+    }
+
+    &:hover {
+      &::before {
+        width: 3rem;
+        @include m.transition;
+      }
+    }
+  }
+
+  &-iconed {
+    @include m.flex($align: center);
+    color: c.$color-text-secondary;
+    text-decoration: underline;
+
+    &-icon {
+      padding-left: 0.75rem;
+    }
+  }
+}
+
+//Botones
+.button {
+  display: inline-block;
+  padding: 1rem 4rem;
+  text-decoration: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  &:hover {
+    @include m.transition($time: 300ms);
+    font-weight: 600;
+  }
+
+  &-primary {
+    background-color: c.$color-brand-primary;
+    color: c.$color-text-secondary;
+
+    &:hover {
+      background-color: color.adjust(c.$color-brand-primary, $lightness: -10%);
+    }
+  }
+}
+
+//Tarjetas
+.card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 400px;
+
+  &-comment {
+    @include m.glass;
+
+    &__icon {
+      margin-bottom: 0.5rem;
+    }
+
+    &__text {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    &__name {
+      color: c.$color-brand-primary;
+      font-weight: 600;
+    }
+  }
+}

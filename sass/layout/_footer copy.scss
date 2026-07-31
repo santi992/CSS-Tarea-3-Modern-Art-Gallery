@@ -1,0 +1,45 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  width: 100%;
+  padding: 5rem 0;
+
+  &-container {
+    @include m.flex();
+    gap: 10rem;
+  }
+
+  &-logo {
+    width: 10rem;
+    margin-bottom: 3.5rem;
+  }
+
+  &-text {
+    font-size: t.$font-size-body-m;
+    line-height: t.$line-spacing-body-l;
+    margin-right: 11rem;
+  }
+
+  &-social-media {
+    @include m.flex();
+    list-style: none;
+
+    gap: 1.5rem;
+
+    &-item img {
+      width: 1.5rem;
+    }
+  }
+
+  &-primary {
+    background-color: c.$color-bg-primary;
+    color: c.$color-text-secondary;
+  }
+
+  &-secondary {
+    background-color: c.$color-bg-secondary;
+    color: c.$color-text-primary;
+  }
+}

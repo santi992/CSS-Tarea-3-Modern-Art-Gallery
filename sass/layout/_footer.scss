@@ -1,0 +1,56 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  width: 100%;
+  padding: 5rem 0;
+
+  &-container {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+    @include b.respond(b.$tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &-logo {
+    width: 10rem;
+  }
+
+  &-text {
+    font-size: t.$font-size-body-m;
+    line-height: t.$line-spacing-body-l;
+    //margin-right: 15%;
+  }
+
+  &-social-media {
+    @include b.respond(b.$tablet) {
+      margin-left: auto;
+    }
+    @include m.flex();
+    list-style: none;
+
+    gap: 1.5rem;
+
+    &-item img {
+      width: 1.5rem;
+    }
+  }
+
+  &-primary {
+    background-color: c.$color-bg-primary;
+    color: c.$color-text-secondary;
+  }
+
+  &-secondary {
+    background-color: c.$color-bg-secondary;
+    color: c.$color-text-primary;
+  }
+}

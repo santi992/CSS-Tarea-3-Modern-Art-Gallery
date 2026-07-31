@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Título para el navegador y los buscadores -->
+    <title>Our location</title>
+
+    <!-- Descripción de la página para los buscadores -->
+    <meta name="description" content="Modern Art Gallery location page" />
+
+    <!-- Palabras clave para los buscadores -->
+    <meta name="keywords" content="keyword" />
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Santiago Sánchez" />
+
+    <!-- Favicon de la página -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <!-- Codificación-->
+    <meta charset="UTF-8" />
+
+    <!-- Para que la web sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Para algunos navegadores móviles -->
+    <meta name="theme-color" content="#1e7bbf" />
+
+    <!-- Tipografías importadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <main class="our-location">
+      <div class="map-container">
+        <picture class="map-image">
+          <source srcset="../img/map-large.jpg" media="(min-width: 1200px)" />
+          <source srcset="../img/map-medium.jpg" media="(min-width: 768px)" />
+          <img src="../img/map-small.jpg" alt="Imagen" />
+        </picture>
+        <div class="back-home-button page-container">
+          <a class="button button-left button-primary" href="../index.html">
+            <span class="button button-end button-primary-end button-left-end"
+              ><</span
+            >
+            BACK TO HOME
+          </a>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-container page-container">
+          <h1 class="title grid-item-1">OUR LOCATION</h1>
+          <div class="grid-item-2">
+            <h2 class="subtitle">99 KING STREET</h2>
+            <address>
+              <p>Newport</p>
+              <p>RI 02840</p>
+              <p>United States of America</p>
+            </address>
+            <p class="description">
+              Our newly opened gallery is located near the Edward King House on
+              99 King Street, the Modern Art Gallery is free to all visitors and
+              open seven days a week from 8am to 9pm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer footer-secondary">
+      <div class="footer-container page-container">
+        <a href="../index.html"
+          ><img
+            src="../img/brand-logo-b.svg"
+            alt="Modern Art Gallery"
+            class="footer-logo"
+        /></a>
+        <p class="footer-text">
+          The Modern Art Gallery is free to all visitors and open seven days a
+          week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+        </p>
+        <ul class="footer-social-media">
+          <li class="footer-social-media-item">
+            <a href="https://www.facebook.com">
+              <img src="../icons/facebook-logo-b.svg" alt="facebook" />
+            </a>
+          </li>
+          <li class="footer-social-media-item">
+            <a href="https://www.instagram.com">
+              <img src="../icons/instagram-logo-b.svg" alt="instagram" />
+            </a>
+          </li>
+          <li class="footer-social-media-item">
+            <a href="https://www.x.com">
+              <img src="../icons/x-logo-b.svg" alt="x.com" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
